@@ -1,8 +1,8 @@
 # Dibujo Pokemon (Gengar) con CSS
 
 [![version](https://svgshare.com/i/P9C.svg)](https://www.npmjs.com/package/npm)
-![language](https://svgshare.com/i/PAE.svg)
-![language](https://svgshare.com/i/P97.svg)
+[![language](https://svgshare.com/i/PAE.svg)](https://www.npmjs.com/package/pug)
+[![language](https://svgshare.com/i/P97.svg)](https://www.npmjs.com/package/sass)
 [![license](https://svgshare.com/i/PAR.svg)](LICENSE)
 
 Dibujo creado a partir de formas b&aacute;sicas, agregando un poco de complejidad con la propiedad clip-path.
