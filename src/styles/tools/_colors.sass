@@ -1,0 +1,37 @@
+@charset "utf-8"
+
+@import 'functions'
+@import 'variables'
+
+
+
+\:root
+  // Card colors
+  --card-font-color:                    #{mapGet($card-colors, font)}
+  --card-background:                    #{mapGet($card-colors, background)}
+  --card-star:                          #{mapGet($card-colors, star)}
+
+  // Character colors
+  --dark:                               #{mapGet($colors, dark)}
+  --light:                              #{mapGet($colors, light)}
+  --eye:                                #{mapGet($colors, eye)}
+  --body-dark:                          #{mapGet($colors, body-dark)}
+  --hair:                               #{mapGet($colors, hair)}
+  --body-light:                         #{mapGet($colors, body-light)}
+  --body-shadow:                        #{mapGet($colors-shadow, body)}
+  --body-flash:                         #{mapGet($colors-light, body)}
+  --light-eye:                          #{mapGet($colors-light, eye)}
+  --light-eye-flash:                    #{mapGet($colors-light, eye-flash)}
+  --shadow-teeth:                       #{mapGet($colors-shadow, teeth)}
+  --gradient-body-one:                  #{mapGet($gradients, body, one)}
+  --gradient-body-two:                  #{mapGet($gradients, body, two)}
+  --gradient-body-flash-one:            #{mapGet($gradients, body-flash, one)}
+  --gradient-body-flash-two:            #{mapGet($gradients, body-flash, two)}
+  --gradient-body-flash-gradient-one:   #{mapGet($gradients, body-flash, array-gradient, one)}
+  --gradient-body-flash-gradient-two:   #{mapGet($gradients, body-flash, array-gradient, two)}
+  --gradient-body-flash-gradient-three: #{mapGet($gradients, body-flash, array-gradient, three)}
+  --gradient-body-flash-gradient-four:  #{mapGet($gradients, body-flash, array-gradient, four)}
+  --gradient-body-shadow-one:           #{mapGet($gradients, body-shadow, one)}
+  --gradient-body-shadow-two:           #{mapGet($gradients, body-shadow, two)}
+  --gradient-mouth-up-one:              #{mapGet($gradients, mouth-up, one)}
+  --gradient-mouth-up-two:              #{mapGet($gradients, mouth-up, two)}

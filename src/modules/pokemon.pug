@@ -1,0 +1,58 @@
+div.gengar
+  div.img-type
+  div.body
+    div.inner-contour
+    div.limit
+      div.shadow
+      div.light-wrapper
+        each _, i in Array(3)
+          div(class='light light--'+(i+1))
+      div.flash
+  div.ears
+    div.left-wrapper
+      div.ear
+      div.light-wrapper
+        div.light
+    div.right-wrapper
+      div.ear
+      div.light-wrapper
+        div.light
+  div.hairs
+    each _, i in Array(4)
+      div(class='hair hair--'+(i+1))
+  div.hands
+    div.left
+    div.right
+    div.left-light-limit
+      div.light-wrapper
+        each _, i in Array(4)
+          div(class='light light--'+(i+1))
+    div.right-light-limit
+      div.light-wrapper
+        each _, i in Array(3)
+          div(class='light light--'+(i+1))
+  div.eyes
+    div.left
+      div.light
+      div.pupil
+    div.right
+      div.light
+      div.pupil
+  div.mouth
+    div.shadow-wrapper
+      div.shadow
+    div.teeth
+  div.feet
+    div.left
+      div.leg
+      div.foot
+      div.light
+    div.right
+      div.outter-contour
+      div.foot
+      div.wrapper-leg
+        div.leg
+          div.inner-contour
+          div.light-wrapper
+            div.light
+  div.tail

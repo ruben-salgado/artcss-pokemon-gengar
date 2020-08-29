@@ -1,0 +1,101 @@
+@charset "utf-8"
+
+@use 'sass:map'
+
+
+
+@mixin position()
+  position: absolute
+
+@mixin location($top, $left, $width, $height)
+  @extend %position
+  top: $top
+  left: $left
+  height: $height
+  width: $width
+
+@mixin locationBottom($bottom, $left, $width, $height)
+  @extend %position
+  bottom: $bottom
+  left: $left
+  height: $height
+  width: $width
+
+@mixin typeImage($text)
+  & .img-type
+    &::before
+      content: $text
+      font-size: 19px
+      font-family: $font
+      position: absolute
+      color: var(--card-font-color)
+      width: 50px
+      height: 50px
+      right: -30px
+      top: 25px
+
+@mixin ear($top, $left, $color)
+  @include location($top, $left, 150px, 210px)
+  background: var(--dark)
+  clip-path: polygon(9% 60%, 6% 3%, 56% 40%)
+  & .ear
+    &::before
+      @include location(0, 0, 150px, 210px)
+      @extend %position-content
+      background: $color
+      clip-path: polygon(10% 60%, 7% 5%, 55% 40%)
+  & .light-wrapper
+    filter: drop-shadow(-3px 3px 3px var(--body-flash))
+    & .light
+      @include location(12px, 10px, 68px, 90px)
+      background: var(--body-flash)
+      clip-path: polygon(0% 0%, 67% 50%, 50% 45%, 60% 60%, 49% 54%, 50% 64%, 27% 40%, 32% 54%, 28% 53%, 30% 68%, 16% 40%)
+      
+@mixin hair($top, $left, $height, $width, $mirror, $rotate)
+  @include location($top, $left, $width, $height)
+  transform: scaleX($mirror) rotate($rotate)
+  clip-path: polygon(0% 38%, 7% 0%, 68% 45%)
+  background: var(--dark)
+  &::before
+    @include location(0, 0, $width, $height)
+    @extend %position-content
+    clip-path: polygon(2% 37%, 9% 5%, 70% 50%)
+    background: var(--hair)
+
+@mixin hand($top, $left, $color)
+  @include location($top, $left, 90px, 100px)
+  clip-path: polygon(21% 1%, 35% 8%, 45% 12%, 78% 33%, 90% 40%, 48% 87%, 35% 66%, 24% 44%, 10% 38%, 18% 31%, 17% 27%, 4% 18%, 12% 15%, 18% 13%, 22% 14%, 20% 8%, 20% 7%)
+  background: var(--dark)
+  &::before
+    @include location(0, 0, 90px, 100px)
+    @extend %position-content
+    clip-path: polygon(23% 3%, 35% 10%, 45% 14%, 78% 35%, 90% 40%, 48% 85%, 35% 63%, 25% 42%, 12% 38%, 19% 32%, 18% 26%, 7% 18%, 12% 16%, 18% 14%, 24% 16%, 23% 12%, 22% 7%)
+    background: $color
+
+@mixin eye($top, $left, $mirror, $rotate)
+  @include location($top, $left, 47px, 59px)
+  position: relative
+  border-radius: 50%
+  transform: scaleX($mirror) rotate($rotate)
+  background-image: linear-gradient(to top right, transparent 50%, var(--eye) 50%)
+  box-shadow: 2px -3px 0 0 var(--dark)
+  z-index: mapGet($layer, three)
+  &::before,
+  &::after
+    @extend %position-content
+  &::after
+    @include locationBottom(-4px, 21px, 3px, 70px)
+    transform: rotate(-218deg)
+    border-radius: 30% 70% 70% 40% / 20% 5% 50% 90%
+    background: var(--dark)
+  & .pupil
+    @include locationBottom(37px, 20px, 1px, 5px)
+    background: var(--light)
+    border-radius: 50%
+    transform: rotate(-7deg)
+    box-shadow: 0px 0px 0 2px var(--dark)
+
+@mixin tail($top, $left, $height, $width, $color)
+  @include location($top, $left, $height, $width)
+  border-radius: 50%
+  background-image: linear-gradient(to right, $color 50%, transparent 50%)

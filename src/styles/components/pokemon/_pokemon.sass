@@ -1,0 +1,349 @@
+@charset "utf-8"
+
+@import '../../tools/mixins'
+@import '../../tools/functions'
+@import '../../tools/variables'
+@import '../../tools/colors'
+
+
+
+/*  Pokemon Image */
+.img-base
+  @include location(7px, 120px, 350px, 360px)
+  @include typeImage("Imagen")
+  transform-origin: center center
+  background-image: url($image)
+  background-repeat: no-repeat
+  background-size: 350px 360px
+
+.gengar
+  @include location(7px, 120px, 350px, 360px)
+  @include typeImage("CSS")
+
+  & .body
+    @include location(65px, 55px, 205px, 255px)
+    background-image: radial-gradient(farthest-corner at 45px 45px, var(--gradient-body-one) 0%, var(--gradient-body-two) 100%)
+    transform: rotate(10deg)
+    border-radius: 50%
+    z-index: mapGet($layer, one)
+
+    & .inner-contour
+      @include location(-1px, -1px, 209px, 256px)
+      clip-path: polygon(5% 10%, 18% 13%, 39% 0%, 65% 3%, 80% 5%, 81% 15%, 100% 31%, 100% 38%, 97% 50%, 100% 62%, 93% 80%, 87% 80%, 63% 95%, 65% 100%, 24% 100%, 21% 82%, 18% 80%, 0% 85%, 0% 37%, 10% 35%, 12% 30%)
+      z-index: mapGet($layer, two)
+      &::before
+        @include location(0px, 0px, 205px, 255px)
+        @extend %position-content
+        border-radius: 50%
+        border: 1px solid var(--dark)
+    
+    & .limit
+      @include location(0px, 0px, 205px, 255px)
+      border-radius: 50%
+      overflow: hidden
+      & .flash
+        @include location(34px, 64px, 50px, 40px)
+        background: radial-gradient(circle, var(--gradient-body-flash-one) 10%, var(--gradient-body-flash-two) 100%)
+        border-radius: 50%
+        transform: rotate(10deg)
+        box-shadow: 0 0 18px var(--gradient-body-flash-gradient-one), 0 0 15px var(--gradient-body-flash-gradient-two), 0 0 10px var(--gradient-body-flash-gradient-three), 0 0 5px var(--gradient-body-flash-gradient-four)
+      & .shadow
+        @include location(130px, 10px, 190px, 125px)
+        clip-path: polygon(8% 14%, 100% 10%, 100% 100%, 0% 100%)
+        &::before,
+        &::after
+          @extend %position-content
+          border-radius: 50%
+        &::before
+          @include location(-50px, 15px, 170px, 170px)
+          background: var(--body-shadow)
+          box-shadow: 0 0 4px 3px var(--body-shadow)
+        &::after
+          @include location(-90px, 0px, 200px, 140px)
+          background-image: radial-gradient(farthest-corner at 18px 20px, var(--gradient-body-shadow-one) 50%, var(--gradient-body-shadow-two) 60%)
+          box-shadow: 0 0 5px 4px var(--gradient-body-shadow-two)
+
+      & .light-wrapper
+        filter: drop-shadow(-3px 3px 3px var(--body-flash)) drop-shadow(5px 3px 3px var(--body-flash))
+        & .light
+          background: var(--body-flash)
+          &.light--1
+            @include location(110px, 0px, 40px, 110px)
+            clip-path: polygon(5% 8%, 55% 30%, 72% 48%, 40% 35%, 80% 65%, 52% 55%, 92% 85%, 76% 80%, 90% 94%, 60% 87%, 48% 80%, 25% 60%, 2% 30%)
+          &.light--2
+            @include location(10px, 30px, 120px, 100px)
+            clip-path: polygon(12% 30%, 20% 20%, 35% 10%, 60% 3%, 80% 10%, 90% 30%, 90% 50%, 86% 53%, 86% 55%, 82% 58%, 86% 60%, 74% 65%, 80% 70%, 64% 75%, 60% 80%, 65% 85%, 53% 84%, 42% 76%, 47% 88%, 40% 84%, 41% 87%, 37% 86%, 18% 62%, 12% 65%, 14% 60%, 6% 65%, 15% 45%, 4% 52%, 13% 35%, 10% 38%, 11% 32%)
+          &.light--3
+            @include location(85px, 115px, 15px, 25px)
+            clip-path: polygon(15% 65%, 55% 28%, 85% 8%, 68% 30%, 80% 24%, 50% 54%, 55% 54%, 28% 74%, 0% 100%)
+
+  & .ears
+    & .left-wrapper
+      @include ear(-10px, 75px, var(--body-light))
+    & .right-wrapper
+      @include ear(13px, 148px, var(--body-dark))
+      transform: scaleX(-1) rotate(-43deg)
+  
+  & .hair
+    @extend %position
+    &--1
+      @include hair(51px, 150px, 40px, 30px, 1, 0)
+    &--2
+      @include hair(58px, 165px, 27px, 22px, 1, 15deg)
+    &--3
+      @include hair(32px, 149px, 90px, 66px, -1, -30deg)
+    &--4
+      @include hair(68px, 198px, 42px, 32px, -1, -42deg)
+  
+  & .hands
+    & .left
+      @include hand(70px, 20px, var(--body-light))
+      
+    & .right
+      @include hand(155px, 230px, var(--body-dark))
+      transform: scaleX(-1) rotate(-45deg)
+    
+    & .left-light-limit
+      @include location(70px, 20px, 90px, 100px)
+      clip-path: polygon(23% 3%, 35% 10%, 45% 14%, 78% 35%, 90% 40%, 48% 85%, 35% 63%, 25% 42%, 12% 38%, 19% 32%, 18% 26%, 7% 18%, 12% 16%, 18% 14%, 24% 16%, 23% 12%, 22% 7%)
+      overflow: hidden
+      & .light-wrapper
+        filter: drop-shadow(0px 0px 3px var(--body-flash)) drop-shadow(0px 0px 3px var(--body-flash))
+        & .light
+          @extend %position
+          background: var(--body-flash)
+        & .light--1
+          @include location(0px, 16px, 10px, 14px)
+          clip-path: polygon(27% 9%, 72% 30%, 72% 60%, 25% 65%, 20% 35%)
+        & .light--2
+          @include location(12px, 0px, 15px, 14px)
+          clip-path: polygon(20% 45%, 60% 25%, 80% 50%, 60% 77%)
+        & .light--3
+          @include location(31px, 8px, 10px, 12px)
+          clip-path: polygon(17% 58%, 35% 48%, 70% 69%)
+        & .light--4
+          @include location(22px, 29px, 40px, 30px)
+          transform: rotate(35deg)
+          clip-path: polygon(0% 0%, 32% 0%, 57% 8%, 42% 20%, 69% 38%, 10% 24%, 25% 12%)
+        
+    & .right-light-limit
+      @include location(155px, 230px, 90px, 100px)
+      clip-path: polygon(23% 3%, 35% 10%, 45% 14%, 78% 35%, 90% 40%, 48% 85%, 35% 63%, 25% 42%, 12% 38%, 19% 32%, 18% 26%, 7% 18%, 12% 16%, 18% 14%, 24% 16%, 23% 12%, 22% 7%)
+      transform: scaleX(-1) rotate(-45deg)
+      overflow: hidden
+      & .light-wrapper
+        filter: drop-shadow(0px 0px 3px var(--body-flash)) drop-shadow(0px 0px 3px var(--body-flash))
+        transform: scaleX(-1) rotate(-45deg)
+        & .light
+          @extend %position
+          background: var(--body-flash)
+        & .light--1
+          @include location(10px, 32px, 30px, 18px)
+          clip-path: polygon(0% 11%, 20% 18%, 90% 52%, 81% 72%, 62% 92%, 42% 88%, 35% 80%)
+        & .light--2
+          @include location(28px, 49px, 11px, 15px)
+          clip-path: polygon(50% 18%, 53% 19%, 90% 82%, 50% 80%)
+        & .light--3
+          @include location(43px, 35px, 8px, 9px)
+          clip-path: polygon(100% 40%, 92% 100%, 30% 80%, 60% 45%)
+
+  & .eyes
+    & .left
+      @include eye(128px, 108px, 1, 200deg)
+      & .light
+        @include location(7px, 27px, 18px, 32px)
+        border-radius: 18% 82% 35% 65% / 48% 58% 42% 52% 
+        background: var(--light-eye)
+        box-shadow: 0 0 5px var(--light-eye), 0 0 3px var(--light-eye), 0 0 2px var(--light-eye)
+        &::before
+          @include location(0px, -2px, 7px, 2px)
+          @extend %position-content
+          border-radius: 50%
+          transform: rotate(15deg)
+          background: var(--light-eye-flash)
+          box-shadow: 0 0 5px var(--light-eye-flash), 0 0 3px var(--light-eye-flash), 0 0 2px var(--light-eye-flash)
+
+    & .right
+      @include eye(88px, 172px, -1, 163deg)
+      & .light
+        @include location(3px, 15px, 25px, 18px)
+        background: #000
+        border-radius: 28% 72% 30% 70% / 25% 53% 47% 75%
+        background: var(--light-eye)
+        box-shadow: 0 0 5px var(--light-eye), 0 0 3px var(--light-eye), 0 0 2px var(--light-eye)
+        &::before
+          @include location(3px, 13px, 7px, 2px)
+          @extend %position-content
+          border-radius: 50%
+          transform: rotate(15deg)
+          background: var(--light-eye-flash)
+          box-shadow: 0 0 5px var(--light-eye-flash), 0 0 3px var(--light-eye-flash), 0 0 2px var(--light-eye-flash)
+
+  & .mouth
+    @include location(142px, 87px, 134px, 112px)
+    z-index: mapGet($layer, two)
+    transform: rotate(14deg)
+    &::before,
+    &::after
+      @extend %position-content
+      border-radius: 50%
+      border: 2px solid var(--dark)
+    &::before
+      @include location(0px, 0px, 134px, 112px)
+      background: var(--light)
+      clip-path: polygon(0% 40%, 100% 50%, 100% 100%, 0% 100%)
+    &::after
+      @include location(-34px, -7px, 158px, 112px)
+      background-image: radial-gradient(farthest-corner at 18px 20px, var(--gradient-mouth-up-one) 50%, var(--gradient-mouth-up-two) 60%)
+      clip-path: polygon(0% 66%, 100% 73%, 100% 100%, 0% 100%)
+    & .shadow-wrapper
+      filter: drop-shadow(-2px 1px 3px var(--shadow-teeth)) drop-shadow(2px 1px 3px var(--shadow-teeth))
+      @extend %position
+      & .shadow
+        @include location(55px, 8px, 130px, 60px)
+        background: var(--shadow-teeth)
+        clip-path: polygon(0% 0%, 100% 0%, 80% 57%, 60% 80%, 40% 83%, 25% 81%, 10% 60%)
+
+    & .teeth
+      @include location(55px, 10px, 130px, 62px)
+      &::before,
+      &::after
+        @extend %position-content
+        background: var(--dark)
+      &::before
+        @include location(12px, 10px, 2px, 32px)
+        box-shadow: 80px 10px 0 0 var(--dark)
+      &::after
+        @include location(22px, 35px, 2px, 34px)
+        box-shadow: 30px 3px 0 0 var(--dark)
+
+  & .feet
+    & .left
+      @include location(110px, 45px, 60px, 90px)
+      position: relative
+      &::before,
+      &::after
+        @extend %position-content
+        background: var(--body-shadow)
+      &::before
+        @include location(-16px, 1px, 80px, 90px)
+        border-radius: 50%
+      &::after
+        @include location(68px, 22px, 80px, 90px)
+        clip-path: polygon(0% 0%, 35% 0%, 35% 4%, 35% 10%, 36% 14%, 35% 14%, 33% 14%, 25% 11%, 24% 20%, 20% 19%, 18% 17%, 14% 11%, 11% 17%, 9% 15%, 6% 10%, 0% 0%)
+
+      & .leg
+        @include location(-16px, 1px, 78px, 90px)
+        clip-path: polygon(0% 15%, 30% 20%, 65% 100%, 46% 100%, 43% 95%, 38% 95%, 32% 100%, 0% 100%)
+        &::before
+          @include location(0px, 0px, 78px, 88px)
+          @extend %position-content
+          border-radius: 50%
+          border: 1px solid var(--dark)
+      
+      & .foot
+        @include location(68px, 21px, 86px, 96px)
+        clip-path: polygon(0% 0%, 35% 0%, 35% 4%, 35% 10%, 37% 15%, 35% 15%, 31% 14%, 25% 12%, 24% 20%, 19% 19%, 17% 17%, 14% 13%, 12% 17%, 9% 15%, 6% 10%, 0% 0%)
+        background: var(--dark)
+
+      & .light
+        @include location(-21px, 2px, 112px, 100px)
+        border-radius: 50%
+        overflow: hidden
+        &::before
+          @include location(50px, 5px, 10px, 30px)
+          @extend %position-content
+          transform: rotate(-40deg)
+          border-radius: 50%
+          background: var(--body-dark)
+          box-shadow: 0 0 6px 5px var(--body-dark)
+
+    & .right
+      @include location(62px, 177px, 51px, 88px)
+      position: relative
+      border-radius: 50%
+      transform: rotate(20deg)
+      background: var(--body-light)
+      z-index: mapGet($layer, one)
+      &::before
+        @include location(11px, -10px, 68px, 89px)
+        @extend %position-content
+        background: var(--body-light)
+        clip-path: polygon(0% 55%, 20% 12%, 50% 80%, 42% 80%)
+      
+      & .wrapper-leg
+        @include location(-10px, -30px, 80px, 85px)
+        overflow: hidden
+        clip-path: polygon(30% 0%, 89% 0%, 84% 17%, 87% 20%, 95% 30%, 100% 50%, 100% 80%, 47% 100%, 45% 96%, 37% 90%, 26% 82%, 22% 86%, 20% 87%, 0% 60%)
+        
+        & .leg
+          @include location(6px, 20px, 52px, 74px)
+          border-radius: 50%
+          transform: rotate(20deg)
+          background: var(--body-light)
+          box-shadow: 0 0 4px 3px var(--body-light)
+
+          & .inner-contour
+            @include location(-2px, -5px, 56px, 75px)
+            clip-path: polygon(20% 0%, 80% 0%, 70% 12%)
+            &::before
+              @include location(0px, 0px, 56px, 75px)
+              @extend %position-content
+              border-radius: 50%
+              border: 1px solid var(--dark)
+          
+          & .light-wrapper
+            @include location(0px, -3px, 56px, 80px)
+            filter: drop-shadow(-3px 3px 3px var(--body-flash)) drop-shadow(5px 3px 3px var(--body-flash))
+            & .light
+              @include location(3px, 4px, 56px, 80px)
+              border-radius: 50%
+              overflow: hidden
+              &::before
+                @include location(0px, 0px, 56px, 75px)
+                @extend %position-content
+                clip-path: polygon(0% 10%, 0% 40%, 0% 30%, 0% 50%, 7% 40%, 7% 60%, 12% 45%, 16% 65%, 25% 40%, 30% 70%, 40% 45%, 50% 40%, 60% 40%, 80% 30%, 85% 2%, 34% 0%, 28% 0%, 13% 10%)
+                background: var(--body-flash)
+      
+      & .foot
+        @include location(50px, 16px, 26px, 38px)
+        background: linear-gradient(to bottom, transparent 50%, var(--body-shadow) 50%)
+        border-radius: 50%
+        transform: rotate(8deg)
+        z-index: mapGet($layer, two)
+        &::before,
+        &::after
+          @extend %position-content
+          transform: rotate(-30deg)
+          clip-path: polygon(0% 50%, 12% 20%, 14% 18%, 28% 5%, 35% 15%, 40% 25%, 70% 2%, 75% 15%, 73% 35%, 82% 25%, 100% 18%, 90% 50%, 81% 65%, 69% 78%, 56% 85%, 49% 87%, 40% 90%, 20% 87%, 10% 80%, 4% 70%)
+        &::before
+          @include location(-2px, -2px, 37px, 42px)
+          background: linear-gradient(to top, transparent 50%, var(--dark) 50%)
+        &::after
+          @include location(0px, -1px, 34px, 38px)
+          background: var(--body-shadow)
+
+      & .outter-contour
+        @include location(0px, -10px, 80px, 90px)
+        clip-path: polygon(60% 0%, 79% 0%, 79% 100%, 28% 100%, 14% 80%, -1% 65%, 10% 70%, 23% 82%)
+        &::before,
+        &::after
+          @extend %position-content
+        &::before
+          @include location(0px, 10px, 51px, 88px)
+          border-radius: 50%
+          background: var(--body-light)
+          border: 1px solid var(--dark)
+        &::after
+          @include location(65px, -1px, 18px, 1px)
+          background: var(--dark)
+          transform: rotate(38deg)
+
+  & .tail
+    @include tail(4px, 124px, 46px, 35px, var(--dark))
+    position: relative
+    transform: rotate(22deg)
+    &::before
+      @include tail(1px, 1px, 40px, 32px, var(--body-shadow))
+      @extend %position-content
+    
