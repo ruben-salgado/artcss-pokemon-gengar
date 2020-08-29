@@ -7,9 +7,16 @@
 
 Dibujo creado a partir de formas b&aacute;sicas, agregando un poco de complejidad con la propiedad clip-path.
 
+<details>
+  <summary>👁 Previsualizar</summary>
+  <p align="center">
+    <img width="350" height="300" src="src/images/preview.png">
+  </p>
+</details>
+
 ---
 
-## Instalaci&oacute;n
+## 💻 Instalaci&oacute;n
 
 Verificar que se tiene instalado [Node.js](https://nodejs.org/es/) superior a 12.
 
@@ -28,7 +35,7 @@ Instalaci&oacute;n de los m&oacute;dulos de node, dentro de la carpeta del proye
 
 ---
 
-## Iniciar servidor de desarrollo con recarga autom&aacute;tica
+## 🔁 Iniciar servidor de desarrollo con recarga autom&aacute;tica
 
 Para iniciar el servidor es necesario correr la instrucci&oacute;n
 
@@ -38,10 +45,12 @@ Para iniciar el servidor es necesario correr la instrucci&oacute;n
 
 > El servidor se ejecuta en el puerto 9000 y abre autom&aacute;ticamente una ventana del navegador para visualizarlo.
 
-<p align="center">
-  <img width="350" height="300" src="src/images/preview.png">
-</p>
-
-## Demostraci&oacute;n
+### 🔗 Demostraci&oacute;n
 
 Privsualizaci&oacute;n del c&oacute;digo en: [CodePen](https://t.co/XfdN0VIr87?amp=1)
+
+---
+
+## 📝 Licencia
+
+[MIT](LICENSE)
