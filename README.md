@@ -1,24 +1,26 @@
 # Dibujo Pokemon (Gengar) con CSS
 
-[![version](https://svgshare.com/i/P9C.svg)](https://www.npmjs.com/package/npm)
-[![language](https://svgshare.com/i/PAE.svg)](https://www.npmjs.com/package/pug)
-[![language](https://svgshare.com/i/P97.svg)](https://www.npmjs.com/package/sass)
-[![license](https://svgshare.com/i/PAR.svg)](LICENSE)
+<p align="center">
+    <a href="https://www.npmjs.com/package/npm"><img src="https://t.ly/1bEy" alt="version" /></a>
+    <a href="https://www.npmjs.com/package/pug"><img src="https://t.ly/eyje" alt="language" /></a>
+    <a href="https://www.npmjs.com/package/sass"><img src="https://t.ly/oKOT" alt="language" /></a>
+    <a href="LICENSE"><img src="https://t.ly/JtYj" alt="license" /></a>
+</p>
 
 Dibujo creado a partir de formas b&aacute;sicas, agregando un poco de complejidad con la propiedad clip-path.
 
 <details>
-  <summary>👁 Previsualizar</summary>
+  <summary>:eye: Previsualizar</summary>
   <p align="center">
-    <img width="350" height="300" src="src/images/preview.png">
+    <img style="box-shadow: 2px 2px 3px 0 #d0d0d0; border-radius: 10px;" src="src/images/preview.gif">
   </p>
 </details>
 
 ---
 
-## 💻 Instalaci&oacute;n
+## :computer: Instalaci&oacute;n
 
-Verificar que se tiene instalado [Node.js](https://nodejs.org/es/) superior a 12.
+Verificar que se tiene instalado [Node.js][L-nodejs] > 12.
 
 ```bash
   $ node --version
@@ -35,7 +37,7 @@ Instalaci&oacute;n de los m&oacute;dulos de node, dentro de la carpeta del proye
 
 ---
 
-## 🔁 Iniciar servidor de desarrollo con recarga autom&aacute;tica
+## :repeat: Iniciar servidor de desarrollo con recarga autom&aacute;tica
 
 Para iniciar el servidor es necesario correr la instrucci&oacute;n
 
@@ -45,12 +47,26 @@ Para iniciar el servidor es necesario correr la instrucci&oacute;n
 
 > El servidor se ejecuta en el puerto 9000 y abre autom&aacute;ticamente una ventana del navegador para visualizarlo.
 
-### 🔗 Demostraci&oacute;n
+### :link: Demostraci&oacute;n
 
-Privsualizaci&oacute;n del c&oacute;digo en: [CodePen](https://t.co/XfdN0VIr87?amp=1)
+Previsualizaci&oacute;n del c&oacute;digo en: [CodePen][L-pen-gengar]
 
 ---
 
-## 📝 Licencia
+## :memo: Licencia
 
-[MIT](LICENSE)
+[![Licencia MIT][B-MIT]][L-OSI]
+
+[:page_with_curl: MIT][L-MIT]
+
+
+
+
+<!-- Insignias -->
+[B-MIT]:        https://t.ly/JtYj (Licencia MIT)
+
+<!-- Vinculos -->
+[L-nodejs]:     https://nodejs.org/es/
+[L-pen-gengar]: https://t.co/HJMkaHs10w?amp=1
+[L-OSI]:        https://opensource.org/licenses/MIT
+[L-MIT]:        https://lbesson.mit-license.org/
